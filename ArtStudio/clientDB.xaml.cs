@@ -15,47 +15,56 @@ using System.Windows.Shapes;
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace Baget
+namespace ArtStudio
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для clientDB.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class clientDB : Window
     {
-        public MainWindow()
+        public clientDB()
         {
             InitializeComponent();
         }
         string rez;
-            
-        private void ShowAll_Click(object sender, RoutedEventArgs e)
+        
+
+        private void showAll_Click(object sender, RoutedEventArgs e)
         {
+            var ID = 1;
+
+
             MySqlConnectionStringBuilder conn_string = new MySqlConnectionStringBuilder();
             conn_string.Server = "37.59.55.185";
             conn_string.UserID = "KqrFwmIx1f";
             conn_string.Password = "V2sbMriJY8";
             conn_string.Database = "KqrFwmIx1f";
             conn_string.CharacterSet = "utf8";
-            MySqlConnection conn = new MySqlConnection(conn_string.ToString());
-            conn.Open();
-            string sql = "SELECT * FROM clientDB";
-            MySqlCommand command = new MySqlCommand(sql, conn);
+            MySqlConnection connection = new MySqlConnection(conn_string.ToString());
+            connection.Open();
+            string sqlRequest = "SELECT * FROM clientDB";
+            // string sqlRequest = $"SELECT * FROM clientDB WHERE ID LIKE {ID} ";
+            MySqlCommand command = new MySqlCommand(sqlRequest, connection);
             MySqlDataReader reader = command.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+
             // читаем результат
-            navigation nav = new navigation();
-                nav.Show();
             while (reader.Read())//цикл выгружающий данные
             {
-                rez += reader[0].ToString() +  " " +
+                rez += reader[0].ToString() + " " +
                 reader[1].ToString() + " "
-                +reader[2].ToString() + " " +
+                + reader[2].ToString() + " " +
                reader[3].ToString() + " " +
                reader[4].ToString() + " " +
+               reader[5].ToString() + " " +
                System.Environment.NewLine;//выгружаем все строки по столбцам
-                tb1.Text = rez;
+                textBox1.Text = rez;
+                grid.ItemsSource = "hello";
             }
+
             reader.Close(); // закрываем
-            conn.Close();
+            connection.Close();
+            
         }
     }
 }

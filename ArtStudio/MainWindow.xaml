@@ -1,0 +1,16 @@
+﻿<Window x:Class="ArtStudio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArtStudio"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Выберите сервис" HorizontalAlignment="Left" Margin="204,6,0,0" VerticalAlignment="Top" FontSize="36" Width="411" FontFamily="Ink Free"/>
+        <Button Content="Остатки материалов" HorizontalAlignment="Left" Margin="1,74,0,0" VerticalAlignment="Top" Width="257" Height="348" Background="#FF49B83E" FontSize="24"/>
+        <Button Content="Текущие заказы" HorizontalAlignment="Left" Margin="525,74,0,0" VerticalAlignment="Top" Width="269" Height="348" Background="#FFFFD703" FontSize="24"/>
+        <Button Content="Клиенты" HorizontalAlignment="Left" Margin="259,74,0,0" VerticalAlignment="Top" Width="265" Height="348" Background="#FFDF4124" Click="Button_Click" FontSize="24"/>
+
+    </Grid>
+</Window>
