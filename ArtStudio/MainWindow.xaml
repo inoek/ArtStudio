@@ -8,9 +8,10 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Label Content="Выберите сервис" HorizontalAlignment="Left" Margin="204,6,0,0" VerticalAlignment="Top" FontSize="36" Width="411" FontFamily="Ink Free"/>
-        <Button Content="Остатки материалов" HorizontalAlignment="Left" Margin="1,74,0,0" VerticalAlignment="Top" Width="257" Height="348" Background="#FF49B83E" FontSize="24"/>
-        <Button Content="Текущие заказы" HorizontalAlignment="Left" Margin="525,74,0,0" VerticalAlignment="Top" Width="269" Height="348" Background="#FFFFD703" FontSize="24"/>
-        <Button Content="Клиенты" HorizontalAlignment="Left" Margin="259,74,0,0" VerticalAlignment="Top" Width="265" Height="348" Background="#FFDF4124" Click="Button_Click" FontSize="24"/>
+        <Button Content="Остатки материалов" HorizontalAlignment="Left" Margin="1,116,0,0" VerticalAlignment="Top" Width="257" Height="306" Background="#FF49B83E" FontSize="24"/>
+        <Button Content="Текущие заказы" HorizontalAlignment="Left" Margin="525,117,0,0" VerticalAlignment="Top" Width="269" Height="305" Background="#FFFFD703" FontSize="24"/>
+        <Button Content="Клиенты" HorizontalAlignment="Left" Margin="259,117,0,0" VerticalAlignment="Top" Width="265" Height="305" Background="#FFDF4124" Click="Button_Click" FontSize="24"/>
+        <Button x:Name="addOrder" Content="Добавить заказ" HorizontalAlignment="Left" Margin="496,50,0,0" VerticalAlignment="Top" Width="298" Height="64" FontSize="24" FontFamily="SimSun-ExtB" Click="addOrder_Click"/>
 
     </Grid>
 </Window>

@@ -25,12 +25,23 @@ namespace ArtStudio
             InitializeComponent();
         }
 
+        public bool start = false;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
            clientDB cDB = new clientDB();
             //надо сделать проверку!!!!
             //cDB.ShowDialog();
+           
+               
+
+            
             cDB.Show();
+        }
+
+        private void addOrder_Click(object sender, RoutedEventArgs e)
+        {
+            orderPage oP = new orderPage();
+            oP.Show();
         }
     }
 }

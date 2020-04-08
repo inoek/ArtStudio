@@ -5,11 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ArtStudio"
         mc:Ignorable="d"
-        Title="clientDB" Height="450" Width="800">
+        Title="clientDB" Height="554" Width="1015.225">
     <Grid>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="423" Margin="745,1,0,-1.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="48"/>
         <Button x:Name="showAll" Content="Показать всё" HorizontalAlignment="Left" Margin="3,2,0,0" VerticalAlignment="Top" Width="204" Height="82" Click="showAll_Click"/>
-        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="398" Margin="216,1,0,0" VerticalAlignment="Top" Width="523"/>
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="515.5" Margin="216,0,0,10" VerticalAlignment="Bottom" Width="784.225"/>
 
     </Grid>
 </Window>

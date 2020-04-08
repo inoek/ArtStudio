@@ -29,6 +29,7 @@ namespace ArtStudio
         }
         //string rez;
         
+        
 
         private void showAll_Click(object sender, RoutedEventArgs e)
         {
@@ -48,32 +49,14 @@ namespace ArtStudio
             MySqlCommand command = new MySqlCommand(sqlRequest, connection);
             //MySqlDataReader reader = command.ExecuteReader();
 
+            //List<string[]> data = new List<string[]>();
 
-
-            List<string[]> data = new List<string[]>();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(command);
-            da.Fill(dt);
-            grid.ItemsSource = dt.DefaultView;
-
-
-
-            // читаем результат
-            //while (reader.Read())//цикл выгружающий данные
-            //{
-            //    rez += reader[0].ToString() + " " +
-            //    reader[1].ToString() + " "
-            //    + reader[2].ToString() + " " +
-            //   reader[3].ToString() + " " +
-            //   reader[4].ToString() + " " +
-            //   reader[5].ToString() + " " +
-            //   System.Environment.NewLine;//выгружаем все строки по столбцам
-            //    textBox1.Text = rez;
-            //   // grid.ItemsSource = "hello";
-            //}
-
-            //reader.Close(); // закрываем
-            connection.Close();
+            
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(command);
+                da.Fill(dt);
+                grid.ItemsSource = dt.DefaultView;
+                connection.Close();
             
         }
     }
