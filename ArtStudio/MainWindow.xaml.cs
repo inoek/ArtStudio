@@ -31,10 +31,7 @@ namespace ArtStudio
            clientDB cDB = new clientDB();
             //надо сделать проверку!!!!
             //cDB.ShowDialog();
-           
-               
 
-            
             cDB.Show();
         }
 
@@ -42,6 +39,7 @@ namespace ArtStudio
         {
             orderPage oP = new orderPage();
             oP.Show();
+
         }
     }
 }

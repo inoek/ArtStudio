@@ -25,11 +25,36 @@ namespace ArtStudio
         public clientDB()
         {
             InitializeComponent();
-           
+            shALL();
         }
         //string rez;
-        
-        
+        public bool test = false;
+        public void shALL()
+        {
+
+                MySqlConnectionStringBuilder conn_string = new MySqlConnectionStringBuilder();
+                conn_string.Server = "37.59.55.185";
+                conn_string.UserID = "KqrFwmIx1f";
+                conn_string.Password = "V2sbMriJY8";
+                conn_string.Database = "KqrFwmIx1f";
+                conn_string.CharacterSet = "utf8";
+                MySqlConnection connection = new MySqlConnection(conn_string.ToString());
+                connection.Open();
+                string sqlRequest = "SELECT * FROM clientDB";
+                // string sqlRequest = $"SELECT * FROM clientDB WHERE ID LIKE {ID} ";
+                MySqlCommand command = new MySqlCommand(sqlRequest, connection);
+                //MySqlDataReader reader = command.ExecuteReader();
+
+                //List<string[]> data = new List<string[]>();
+
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(command);
+                da.Fill(dt);
+                grid.ItemsSource = dt.DefaultView;
+                connection.Close();
+
+        }
 
         private void showAll_Click(object sender, RoutedEventArgs e)
         {
@@ -51,13 +76,13 @@ namespace ArtStudio
 
             //List<string[]> data = new List<string[]>();
 
-            
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(command);
-                da.Fill(dt);
-                grid.ItemsSource = dt.DefaultView;
-                connection.Close();
-            
+
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(command);
+            da.Fill(dt);
+            grid.ItemsSource = dt.DefaultView;
+            connection.Close();
+
         }
     }
 }
