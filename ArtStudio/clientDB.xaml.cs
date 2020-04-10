@@ -28,6 +28,8 @@ namespace ArtStudio
             shALL();
         }
         //string rez;
+        DataTable dt = new DataTable();
+
         public bool test = false;
         public void shALL()
         {
@@ -77,12 +79,21 @@ namespace ArtStudio
             //List<string[]> data = new List<string[]>();
 
 
-            DataTable dt = new DataTable();
+            
             MySqlDataAdapter da = new MySqlDataAdapter(command);
             da.Fill(dt);
             grid.ItemsSource = dt.DefaultView;
             connection.Close();
+        }
 
+        private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void addNewClient_Click(object sender, RoutedEventArgs e)
+        {
+           // dt.Rows.Add(5);
         }
     }
 }

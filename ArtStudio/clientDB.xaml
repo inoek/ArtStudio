@@ -8,7 +8,8 @@
         Title="clientDB" Height="554" Width="1015.225">
     <Grid>
         <Button x:Name="showAll" Content="Показать всё" HorizontalAlignment="Left" Margin="3,2,0,0" VerticalAlignment="Top" Width="204" Height="82" Click="showAll_Click"/>
-        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="515.5" Margin="216,0,0,10" VerticalAlignment="Bottom" Width="784.225"/>
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="515.5" Margin="216,0,0,10" VerticalAlignment="Bottom" Width="784.225" SelectionChanged="grid_SelectionChanged"/>
+        <Button x:Name="addNewClient" Content="Button" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Width="167" Height="106" Click="addNewClient_Click"/>
 
     </Grid>
 </Window>
