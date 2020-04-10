@@ -97,12 +97,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Materials.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="orderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Materials.xaml.cs">
+      <DependentUpon>Materials.xaml</DependentUpon>
+    </Compile>
     <Compile Include="orderPage.xaml.cs">
       <DependentUpon>orderPage.xaml</DependentUpon>
     </Compile>

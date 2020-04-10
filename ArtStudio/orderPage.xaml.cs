@@ -88,7 +88,7 @@ namespace ArtStudio
 
         private void orderGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            List<structForOrder> order = new List<structForOrder>(10);
+            List<structForOrder> order = new List<structForOrder>();
             order.Add(new structForOrder(1, "Да", 20.0,
                 12.0, "Нет", 45.0, 40.0,
                 emptyString, emptyString, emptyString, "Да", "Нет",

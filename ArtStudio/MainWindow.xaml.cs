@@ -41,5 +41,11 @@ namespace ArtStudio
             oP.Show();
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Materials materials = new Materials();
+            materials.Show();
+        }
     }
 }
