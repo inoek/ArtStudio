@@ -6,10 +6,32 @@
         xmlns:local="clr-namespace:ArtStudio"
         mc:Ignorable="d"
         Title="clientDB" Height="554" Width="1015.225">
-    <Grid>
-        <Button x:Name="showAll" Content="Показать всё" HorizontalAlignment="Left" Margin="3,2,0,0" VerticalAlignment="Top" Width="204" Height="82" Click="showAll_Click"/>
-        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="515.5" Margin="216,0,0,10" VerticalAlignment="Bottom" Width="784.225" SelectionChanged="grid_SelectionChanged"/>
-        <Button x:Name="addNewClient" Content="Button" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Width="167" Height="106" Click="addNewClient_Click"/>
+    <Grid Margin="0,-4,0,4">
+        <Button x:Name="showAll" Content="Показать всё" HorizontalAlignment="Left" Margin="3,2,0,0" VerticalAlignment="Top" Width="207" Height="106" Click="showAll_Click" Foreground="#FFF1E3E3">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFB44545" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="521" Margin="213,0,0,0" VerticalAlignment="Bottom" Width="784" SelectionChanged="grid_SelectionChanged"/>
+        <Button x:Name="addNewClient" Content="Внести данные в базу" HorizontalAlignment="Left" Margin="1,123,0,0" VerticalAlignment="Top" Width="212" Height="106" Click="addNewClient_Click" Foreground="#FFFBECEC">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFBD4545" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="FindButton" Content="Поиск по базе" Margin="0,250,792,0" VerticalAlignment="Top" Height="106" Foreground="#FFFBECEC" Click="FindButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFBD4545" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

@@ -79,7 +79,7 @@ namespace ArtStudio
             //List<string[]> data = new List<string[]>();
 
 
-            
+            DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(command);
             da.Fill(dt);
             grid.ItemsSource = dt.DefaultView;
@@ -88,12 +88,23 @@ namespace ArtStudio
 
         private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+           
+
         }
 
         private void addNewClient_Click(object sender, RoutedEventArgs e)
         {
-           // dt.Rows.Add(5);
+            Window1 w = new Window1();
+            w.Show();
+           
+        }
+
+        private void FindButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 w = new Window2();
+            w.Show();
+            
+
         }
     }
 }
