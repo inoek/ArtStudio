@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Window3" Height="551.064" Width="405.319">
     <Grid Margin="0,0,2,0">
-        <Button x:Name="Delete" Content="Удалить" HorizontalAlignment="Left" Margin="25,285,0,0" VerticalAlignment="Top" Width="214" Click="Find_Click" Height="38"/>
+        <Button x:Name="Delete" Content="Удалить" HorizontalAlignment="Left" Margin="27,285,0,0" VerticalAlignment="Top" Width="214" Click="Delete_Click" Height="38"/>
         <TextBox x:Name="Name_box" HorizontalAlignment="Left" Height="23" Margin="148,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Background="#FFB2A4A4"/>
         <TextBox x:Name="number_box" HorizontalAlignment="Left" Height="20" Margin="147,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Background="#FFB09A9A"/>
         <TextBox x:Name="email_box" HorizontalAlignment="Left" Height="24" Margin="147,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.495,2.435" Background="#FFAC9A9A"/>

@@ -106,5 +106,18 @@ namespace ArtStudio
             
 
         }
+
+        private void Delete_button_Click(object sender, RoutedEventArgs e)
+        {
+            Window3 w = new Window3();
+            w.Show();
+        }
+
+        private void Update_button_Click(object sender, RoutedEventArgs e)
+        {
+            Window4 w = new Window4();
+            w.Show();
+
+        }
     }
 }
