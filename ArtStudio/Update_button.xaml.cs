@@ -108,7 +108,19 @@ namespace ArtStudio
                 if (!description_empty)
                     sql += "AND Описание = '" + description + "'";
                 MySqlCommand command = new MySqlCommand(sql, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+                // читаем результат
+                List<string> iD = new List<string>(); 
+               
+                    while (reader.Read())
+                    {
+                    // элементы массива [] - это значения столбцов из запроса SELECT
+                        iD.Add(reader[0].ToString()); 
+                    
+                    }
+                    reader.Close();
 
+                
                 object result = command.ExecuteScalar();
                 if (result == null)
                 {
@@ -121,112 +133,65 @@ namespace ArtStudio
                     {
                         MySqlDataAdapter da = new MySqlDataAdapter(command);
                         DataTable dt = new DataTable();
-                        if (!new_name_empty)
+                        foreach (object c in iD)
                         {
-                            sql = "UPDATE clientDB SET ";
-                            sql += "имя = '" + new_name + "' ";
-                            sql += " WHERE ID != 0 ";
-                            if (!name_empty)
-                                sql += "AND имя = '" + name + "'";
-                            if (!number_empty)
-                                sql += "AND Номер_телефона = '" + number + "'";
-                            if (!email_empty)
-                                sql += "AND Электронная_почта = '" + email + "'";
-                            if (!sale_empty)
-                                sql += "AND Скидка = '" + sale_box.Text + "'";
-                            if (!description_empty)
-                                sql += "AND Описание = '" + description + "'";
-                            command = new MySqlCommand(sql, connection);
-                            // command.ExecuteNonQuery();
-                            da = new MySqlDataAdapter(command);
-                            dt = new DataTable();
-                            da.Fill(dt);
-                        }
+                            if (!new_name_empty)
+                            {
+                                sql = "UPDATE clientDB SET ";
+                                sql += "имя = '" + new_name + "' ";
+                                sql += " WHERE ID = " + c;
+                                command = new MySqlCommand(sql, connection);
+                                // command.ExecuteNonQuery();
+                                da = new MySqlDataAdapter(command);
+                                dt = new DataTable();
+                                da.Fill(dt);
+                            }
 
-                        if (!new_number_empty)
-                        {
-                            sql = "UPDATE clientDB SET ";
-                            sql += "Номер_телефона = '" + new_number + "' ";
-                            sql += " WHERE ID != 0 ";
-                            if (!name_empty)
-                                sql += "AND (имя = '" + name + "' " + "OR имя = '" + new_name + "') ";
-                            if (!number_empty)
-                                sql += "AND Номер_телефона = '" + number + "'";
-                            if (!email_empty)
-                                sql += "AND Электронная_почта = '" + email + "'";
-                            if (!sale_empty)
-                                sql += "AND Скидка = '" + sale_box.Text + "'";
-                            if (!description_empty)
-                                sql += "AND Описание = '" + description + "'";
-                            command = new MySqlCommand(sql, connection);
-                            da = new MySqlDataAdapter(command);
-                            dt = new DataTable();
-                            // command.ExecuteNonQuery();
-                            da.Fill(dt);
-                        }
-                        if (!new_email_empty)
-                        {
-                            sql = "UPDATE clientDB SET ";
-                            sql += "Электронная_почта = '" + new_email + "' ";
-                            sql += " WHERE ID != 0 ";
-                            if (!name_empty)
-                                sql += "AND (имя = '" + name + "' " + "OR имя = '" + new_name + "') ";
-                            if (!number_empty)
-                                sql += "AND (Номер_телефона = '" + number + "' " + "OR Номер_телефона = '" + new_number + "') ";
-                            if (!email_empty)
-                                sql += "AND Электронная_почта = '" + email + "'";
-                            if (!sale_empty)
-                                sql += "AND Скидка = '" + sale_box.Text + "'";
-                            if (!description_empty)
-                                sql += "AND Описание = '" + description + "'";
-                            command = new MySqlCommand(sql, connection);
-                            da = new MySqlDataAdapter(command);
-                            dt = new DataTable();
-                            // command.ExecuteNonQuery();
-                            da.Fill(dt);
-                        }
-                        if (!new_sale_empty)
-                        {
-                            sql = "UPDATE clientDB SET ";
-                            sql += "Скидка = '" + sale_box_New.Text + "' ";
-                            sql += " WHERE ID != 0 ";
-                            if (!name_empty)
-                                sql += "AND (имя = '" + name + "' " + "OR имя = '" + new_name + "') ";
-                            if (!number_empty)
-                                sql += "AND (Номер_телефона = '" + number + "' " + "OR Номер_телфефона = '" + new_number + "') ";
-                            if (!email_empty)
-                                sql += "AND (Электронная_почта = '" + email + "' " + "OR Электронная_почта= '" + new_email + "') ";
-                            if (!sale_empty)
-                                sql += "AND Скидка = '" + sale_box.Text + "'";
-                            if (!description_empty)
-                                sql += "AND Описание = '" + description + "'";
-                            command = new MySqlCommand(sql, connection);
-                            // command.ExecuteNonQuery();
-                            da = new MySqlDataAdapter(command);
-                            dt = new DataTable();
-                            da.Fill(dt);
+                            if (!new_number_empty)
+                            {
+                                sql = "UPDATE clientDB SET ";
+                                sql += "Номер_телефона = '" + new_number + "' ";
+                                sql += " WHERE ID = " + c;
+                                command = new MySqlCommand(sql, connection);
+                                da = new MySqlDataAdapter(command);
+                                dt = new DataTable();
+                                // command.ExecuteNonQuery();
+                                da.Fill(dt);
+                            }
+                            if (!new_email_empty)
+                            {
+                                sql = "UPDATE clientDB SET ";
+                                sql += "Электронная_почта = '" + new_email + "' ";
+                                sql += " WHERE ID = " + c;
+                                command = new MySqlCommand(sql, connection);
+                                da = new MySqlDataAdapter(command);
+                                dt = new DataTable();
+                                // command.ExecuteNonQuery();
+                                da.Fill(dt);
+                            }
+                            if (!new_sale_empty)
+                            {
+                                sql = "UPDATE clientDB SET ";
+                                sql += "Скидка = '" + sale_box_New.Text + "' ";
+                                sql += " WHERE ID = " + c;
+                                command = new MySqlCommand(sql, connection);
+                                // command.ExecuteNonQuery();
+                                da = new MySqlDataAdapter(command);
+                                dt = new DataTable();
+                                da.Fill(dt);
 
-                        }
-                        if (!new_description_empty)
-                        {
-                            sql = "UPDATE clientDB SET ";
-                            sql += "Описание = '" + new_description + "' ";
-                            sql += " WHERE ID != 0 ";
-                            if (!name_empty)
-                                sql += "AND (имя = '" + name + "' " + "OR имя = '" + new_name + "') ";
-                            if (!number_empty)
-                                sql += "AND (Номер_телефона = '" + number + "' " + "OR Номер_телфефона = '" + new_number + "') ";
-                            if (!email_empty)
-                                sql += "AND Электронная_почта = '" + email + "' " + "OR Электронная_почта= '" + new_email + "') ";
-                            if (!sale_empty)
-                                sql += "AND (Скидка = '" + sale_box.Text + "' " + "OR Электронная_почта= '" + sale_box_New.Text + "') ";
-                            if (!description_empty)
-                                sql += "AND Описание = '" + description + "'";
-                            command = new MySqlCommand(sql, connection);
-                            // command.ExecuteNonQuery();
-                            da = new MySqlDataAdapter(command);
-                            dt = new DataTable();
-                            da.Fill(dt);
+                            }
+                            if (!new_description_empty)
+                            {
+                                sql = "UPDATE clientDB SET ";
+                                sql += "Описание = '" + new_description + "' ";
+                                sql += " WHERE ID = " + c;
+                                command = new MySqlCommand(sql, connection);
+                                // command.ExecuteNonQuery();
+                                da = new MySqlDataAdapter(command);
+                                dt = new DataTable();
+                                da.Fill(dt);
+                            }
                         }
                     }
                     if (res == MessageBoxResult.No)

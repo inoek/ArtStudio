@@ -5,67 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ArtStudio"
         mc:Ignorable="d"
-        Title="Window2" Height="412" Width="812.85">
-    <Grid Margin="0,0,2,25">
+        Title="Поиск по базе" Height="365" Width="812.85">
+    <Grid Margin="0,2,2,24">
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="203*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2"/>
+
+            <ColumnDefinition Width="231"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="Find" Content="Найти" HorizontalAlignment="Left" Margin="25,285,0,0" VerticalAlignment="Top" Width="214" Click="Find_Click" Height="38"/>
-        <TextBox x:Name="Name_box" HorizontalAlignment="Left" Height="23" Margin="148,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Background="#FFB2A4A4"/>
-        <TextBox x:Name="number_box" HorizontalAlignment="Left" Height="20" Margin="147,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Background="#FFB09A9A"/>
-        <TextBox x:Name="email_box" HorizontalAlignment="Left" Height="24" Margin="147,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.495,2.435" Background="#FFAC9A9A"/>
-        <TextBox x:Name="sale_box" HorizontalAlignment="Left" Height="24" Margin="148,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Background="#FFA28F8F" RenderTransformOrigin="0.489,-0.292"/>
-        <TextBox x:Name="description_box" HorizontalAlignment="Left" Height="24" Margin="149,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Background="#FFAE9C9C"/>
-        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="19,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.543,3.752" Background="#FFF38383" Height="21">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.468"/>
-                    <TranslateTransform X="0.422" Y="-0.038"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Введите "/><Run Text="описание"/></TextBlock>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="352,0,0,-24" VerticalAlignment="Top" Height="380" Width="451" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Margin="0,0,660,287" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="117" RenderTransformOrigin="0.5,0.5" Background="#FFF39898" Height="23">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.468"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Введите ФИО"/></TextBlock>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Right" Margin="0,0,660,248" TextWrapping="Wrap" Text="Введите номер" VerticalAlignment="Bottom" Width="117" RenderTransformOrigin="0.5,0.5" Background="#FFF78585" Height="23">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.468"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
+        <Button x:Name="Find" Grid.Column ="1" Content="Найти" HorizontalAlignment="Left" Margin="0,234,0,0" VerticalAlignment="Top" Width="231" Click="Find_Click" Height="38"/>
+        <TextBox x:Name="Name_box"  Grid.Column ="1" Height="24"  Width="98" Background="#FFB2A4A4" Margin="133,19,0,262" TextChanged="Name_box_TextChanged"/>
+        <TextBox x:Name="number_box" Grid.Column ="1" Height="24" Margin="133,55,0,226" Width="98" Background="#FFB09A9A"/>
+        <TextBox x:Name="email_box" Grid.Column ="1"  Height="24" Margin="134,93,0,188" Width="98" Background="#FFAC9A9A"/>
+        <TextBox x:Name="sale_box" Grid.Column ="1"  Height="24" Margin="133,136,1,145"  Width="97" Background="#FFA28F8F" />
+        <TextBox x:Name="description_box" Grid.Column ="1" Margin="134,170,0,111"  Width="97" Background="#FFAE9C9C"/>
+        <TextBlock x:Name="textBlock_Copy3" Grid.Column ="1"  Margin="1,170,102,111" TextWrapping="Wrap"  Width="128"  Background="#FFF38383" Height="24">
+           Введите описание</TextBlock>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="326" Width="570" Grid.Column="2" Margin="0,0,0,-21"/>
+        <TextBlock Grid.Column ="1" x:Name="textBlock"  Width="128"  Background="#FFF39898" Height="24" Margin="0,19,103,262">
+           Введите ФИО</TextBlock>
+        <TextBlock x:Name="textBlock_Copy" Height="24" Grid.Column ="1" Width="127"  Text="Введите номер"  Background="#FFF78585"  Margin="0,55,103,226">
+
         </TextBlock>
-        <TextBlock x:Name="textBlock_Copy1" Margin="19,124,659,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" RenderTransformOrigin="0.5,0.5" Background="#FFF79797">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.468"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Введите "/><Run Text="эл.почту"/></TextBlock>
-        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="19,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Height="23" RenderTransformOrigin="0.5,0.5" Background="#FFF36E6E">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.468"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Введите "/><Run Text="скидку"/></TextBlock>
-        <TextBox x:Name="errortext" HorizontalAlignment="Left" Height="23" Margin="25,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214"/>
-        <Button x:Name="Closebutton" Content="Закрыть" HorizontalAlignment="Left" Margin="25,328,0,0" VerticalAlignment="Top" Width="214" Height="28" Click="Closebutton_Click"/>
+        <TextBlock  x:Name="textBlock_Copy1" Margin="0,93,103,188"  Height="24" RenderTransformOrigin="0.5,0.5" Background="#FFF79797" Grid.Column="1">
+            
+           Введите эл.почту</TextBlock>
+        <TextBlock Grid.Column ="1" x:Name="textBlock_Copy2"  Margin="1,136,102,145"   Width="128" Height="24"  Background="#FFF36E6E">
+            Введите скидку</TextBlock>
+        <TextBox x:Name="errortext" HorizontalAlignment="Left" Height="22" Margin="12,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" Grid.Column="1"/>
+        <Button x:Name="Closebutton" Content="Закрыть"  Margin="0,278,0,-18"  Width="231" Click="Closebutton_Click" Grid.Column="1"/>
 
     </Grid>
 </Window>
