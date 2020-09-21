@@ -26,7 +26,7 @@ namespace ArtStudio
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void add_Click(object sender, RoutedEventArgs e)
         {
             int id = 0;
             string name = Name_box.Text;

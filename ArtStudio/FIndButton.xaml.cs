@@ -75,6 +75,7 @@ namespace ArtStudio
                 connection.Open();
 
                 string sql = "SELECT * FROM clientDB WHERE ID != 0 ";
+                //bool firstand = false;
                 if (!name_empty)
                     sql += "AND имя = '" + name + "'";
                 if (!number_empty)
@@ -100,5 +101,9 @@ namespace ArtStudio
             this.Close();
         }
 
+        private void Name_box_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

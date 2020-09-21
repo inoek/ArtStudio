@@ -27,7 +27,7 @@ namespace ArtStudio
             InitializeComponent();
         }
 
-        private void Find_Click(object sender, RoutedEventArgs e)
+        private void Delete_Click(object sender, RoutedEventArgs e)
         {
             int id = 0;
             bool name_empty = false, number_empty = false, email_empty = false, sale_empty = false, description_empty = false;

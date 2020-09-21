@@ -5,61 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ArtStudio"
         mc:Ignorable="d"
-        Title="Window3" Height="551.064" Width="405.319">
+        Title="Удаление данных" Height="551.064" Width="405.319">
     <Grid Margin="0,0,2,0">
-        <Button x:Name="Delete" Content="Удалить" HorizontalAlignment="Left" Margin="25,285,0,0" VerticalAlignment="Top" Width="214" Click="Find_Click" Height="38"/>
-        <TextBox x:Name="Name_box" HorizontalAlignment="Left" Height="23" Margin="148,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Background="#FFB2A4A4"/>
-        <TextBox x:Name="number_box" HorizontalAlignment="Left" Height="20" Margin="147,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Background="#FFB09A9A"/>
-        <TextBox x:Name="email_box" HorizontalAlignment="Left" Height="24" Margin="147,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.495,2.435" Background="#FFAC9A9A"/>
-        <TextBox x:Name="sale_box" HorizontalAlignment="Left" Height="24" Margin="148,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" Background="#FFA28F8F" RenderTransformOrigin="0.489,-0.292"/>
-        <TextBox x:Name="description_box" HorizontalAlignment="Left" Height="24" Margin="149,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Background="#FFAE9C9C"/>
-        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="19,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.543,3.752" Background="#FFF38383" Height="21">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.468"/>
-                    <TranslateTransform X="0.422" Y="-0.038"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Введите "/><Run Text="описание"/></TextBlock>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Right" Margin="0,0,260,451" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="117" RenderTransformOrigin="0.5,0.5" Background="#FFF39898" Height="23">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.468"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Введите ФИО"/></TextBlock>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Right" Margin="0,0,260,412" TextWrapping="Wrap" Text="Введите номер" VerticalAlignment="Bottom" Width="117" RenderTransformOrigin="0.5,0.5" Background="#FFF78585" Height="23">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.468"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <TextBlock x:Name="textBlock_Copy1" Margin="19,124,259,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" RenderTransformOrigin="0.5,0.5" Background="#FFF79797">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.468"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Введите "/><Run Text="эл.почту"/></TextBlock>
-        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="19,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Height="23" RenderTransformOrigin="0.5,0.5" Background="#FFF36E6E">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.468"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Введите "/><Run Text="скидку"/></TextBlock>
-        <TextBox x:Name="errortext" HorizontalAlignment="Left" Height="23" Margin="25,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214"/>
-        <Button x:Name="Closebutton" Content="Закрыть" HorizontalAlignment="Left" Margin="25,328,0,0" VerticalAlignment="Top" Width="214" Height="28" Click="Closebutton_Click"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <TextBox Grid.Row="0" Grid.Column ="1" x:Name="Name_box" Background="#FFB2A4A4" />
+            <TextBlock Grid.Row="0" Grid.Column ="0" x:Name="textBlock"   Background="#FFF39898" Text="Введите ФИО" Margin="4" />
+        <TextBox x:Name="number_box" Margin="154,76,121,424" Background="#FFB09A9A" Width="120"/>
+        <TextBox x:Name="email_box" Margin="154,118,121,376"  Width="120"  Background="#FFAC9A9A" />
+        <TextBox x:Name="sale_box" Margin="154,156,121,338"  Width="120" Background="#FFA28F8F" />
+        <TextBox x:Name="description_box" Margin="154,194,121,300" Background="#FFAE9C9C"/>
+        
+        <TextBlock x:Name="textBlock_Copy3" Margin="24,194,251,294"  Background="#FFF38383" Width="120">
+            Введите описание</TextBlock>
+        </Grid>
+        <Button x:Name="Delete" Content="Удалить"  Margin="29,395,152,80" Click="Delete_Click"/>
+        
+        <TextBlock x:Name="textBlock_Copy"  Margin="24,72,251,424"  Text="Введите номер"  Width="120"  Background="#FFF78585"/>
+        <TextBlock x:Name="textBlock_Copy1" Margin="24,118,251,378"  Background="#FFF79797" Width="120">
+           Введите эл.почту</TextBlock>
+        <TextBlock x:Name="textBlock_Copy2"  Margin="24,156,251,338"  Width="120"  Background="#FFF36E6E">
+           Введите скидку</TextBlock>
+        <TextBox x:Name="errortext" Margin="29,251,155,231"/>
+        <Button x:Name="Closebutton" Content="Закрыть"  Margin="24,308,152,150" Click="Closebutton_Click"/>
     </Grid>
 </Window>
